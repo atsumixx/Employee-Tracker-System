@@ -59,7 +59,10 @@
     </section>
 
     <section class="table-section">
-      <h2>Employee Records</h2>
+      <div class="section-header">
+        <h2>Employee Records</h2>
+        <button id="addEmployeeBtn" class="btn-primary">+ Add Employee</button>
+      </div>
       <div class="table-controls">
         <input type="text" id="searchBox" placeholder="Search by name...">
         <span id="recordCount">Showing 0 records</span>
@@ -87,8 +90,85 @@
     </section>
 
     <footer>
-      <p>Employee Tracking System &copy; 2024</p>
+      <p>Employee Tracking System &copy; 2025</p>
     </footer>
+  </div>
+
+  <!-- Add Employee Modal -->
+  <div id="addEmployeeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add New Employee Record</h2>
+        <span class="close">&times;</span>
+      </div>
+      <form id="addEmployeeForm">
+        <div class="form-group">
+          <label for="empName">Employee Name *</label>
+          <input type="text" id="empName" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="empDepartment">Department *</label>
+          <select id="empDepartment" required>
+            <option value="">Select Department</option>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Sales">Sales</option>
+            <option value="Finance">Finance</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Operations">Operations</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="empMonth">Month *</label>
+          <select id="empMonth" required>
+            <option value="">Select Month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="empAttendance">Days Attended *</label>
+            <input type="number" id="empAttendance" min="0" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="empTotalDays">Total Working Days *</label>
+            <input type="number" id="empTotalDays" min="1" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="empPerformance">Performance Score (0-100) *</label>
+            <input type="number" id="empPerformance" min="0" max="100" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="empOvertime">Overtime Hours *</label>
+            <input type="number" id="empOvertime" min="0" step="0.5" required>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn-primary">Add Employee</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script src="script.js"></script>
